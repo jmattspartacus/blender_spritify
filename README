@@ -1,5 +1,5 @@
-Spritify
-
+Spritify V6.1
+About:
 When an animation render is complete, all of the frames in the animation are
 compiled into a single spritesheet usable for sprite-based games.
 
@@ -9,8 +9,53 @@ automatically generate a sprite sheet each time an animation render completes.
 
 As of version 0.4.0, Spritify will also optionally generate an animated GIF.
 
+As of V6.1, the choice to choose the number of rows and columns is available through the render options.
+
+Requirements:
+ImageMagick, a free, open source command line image manipulation software, downloadable from 
+https://imagemagick.org/index.php
+On installation, choose Install Legacy Utilities
+
+Blender 2.8x, versions of blender earlier than 2.8 are supported by fweeb's original version.
+
+Installation:
+1. Install ImageMagick as described above, if you've already done that, go to the next step.
+2. Download and unzip to a convenient location on your machine
+3. Open blender 2.8x
+4. Under edit, choose preferences, then Add-ons
+5. At the top, choose install, then navigate to the script, select it and click install add-on
+
+Note, these instructions apply to windows, but may not apply to mac/linux/centos/etc
+
+Usage:
+1. Prepare the animation(s) you wish to create sprites for
+2. Render animation
+3. By default the spritesheet will be saved to the render output directory, as 'sprites.png'
+
+Bug Reporting:
+Please leave a description of your issue, along with some details to reproduce in an issue, as time permits I will verify and try to fix issues. 
+If you manage to fix it, you may submit a pull request and I will evaluate the changes and merge them if they do not break anything else.
+
+Known Issues:
+Windows x64, on finalizing spritesheet generation, the error
+```
+montage: unable to open module file 'C:\Program Files\ImageMagick-7.0.10-Q16\modules\coders\IM_MOD_RL_BLEND_.dll': No such file or directory @ warning/module.c/GetMagickModulePath/675.
+montage: no decode delegate for this image format `BLEND' @ error/constitute.c/ReadImage/562.
+```
+will occasionally show up in the python console, it does not effect functionality.
+
+Credit:
+Incorporates modifications from SkaceKachna on Factorio forums
+https://forums.factorio.com/viewtopic.php?f=34&t=5336
+
+Forked from fweeb's Spritify, found here
+https://github.com/Fweeb/blender_spritify
+
 Originally developed for use in the Ancient Beast (http://www.ancientbeast.com/)
 project.
 
 More complete documentation can be found in Blender's add-ons Catalog
 (http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Render/Spritify)
+
+DISCLAIMER:
+I am not the original author of this code, I am updating it to use it for preparing spritesheets for Factorio, and other projects.
